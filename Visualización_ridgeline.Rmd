@@ -1,0 +1,25 @@
+---
+title: "Untitled"
+author: "Joana Maria Ferragut Amengual"
+date: '2023-04-16'
+output: html_document
+---
+```{r}
+library(dplyr)
+library(ggplot2)
+library(ggridges )
+```
+
+
+```{r}
+x = read.csv('heart_2020_cleaned.csv', sep=';')
+head(x)
+```
+```{r}
+ggplot(x, aes(x = BMI, y = GenHealth,fill = GenHealth)) + 
+  geom_density_ridges()+
+  ggtitle(label="Distribución del IMC según el pensamiento del grado de salud")
+```
+
+
+
